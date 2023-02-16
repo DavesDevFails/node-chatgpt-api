@@ -25,6 +25,7 @@
   ],
   "dependencies": {
     "@waylaidwanderer/fetch-event-source": "^3.0.1",
+    "dotenv-safe": "^8.2.0",
     "node-fetch": "^3.3.0"
   }
 }

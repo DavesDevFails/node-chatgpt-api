@@ -92,14 +92,14 @@ class ChatGPTClient {
                             throw error;
                         },
                         onclose() {
-                            // throw new Error(`Failed to send message. Server closed the connection unexpectedly.`);
+                            throw new Error(`Failed to send message. Server closed the connection unexpectedly.`);
                         },
                         onerror(err) {
                             if (debug) {
                                 console.debug(err);
                             }
                             // rethrow to stop the operation
-                            // throw err;
+                            throw err;
                         },
                         onmessage(message) {
                             try {
@@ -115,7 +115,8 @@ class ChatGPTClient {
                             onProgress(JSON.parse(message.data));
                         }
                         catch(err){
-                            // console.log(err);
+                            console.log(err);
+                            throw err;
                         }
                         },
                     });
